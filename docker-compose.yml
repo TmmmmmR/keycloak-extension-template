@@ -1,0 +1,21 @@
+version: '3'
+services:
+  keycloak:
+    container_name: keycloak
+    hostname: keycloak
+    image: quay.io/keycloak/keycloak:26.0.7
+
+    environment:
+      KC_BOOTSTRAP_ADMIN_USERNAME: admin
+      KC_BOOTSTRAP_ADMIN_PASSWORD: admin
+      DEBUG_PORT: '*:8787'
+      KC_LOG_LEVEL: INFO,com.example:debug
+      DEBUG: 'true'
+    command: ['start-dev', '--debug', '--import-realm']
+    ports:
+      - 8080:8080
+      - 8443:8443
+      - 8787:8787
+    volumes:
+      - ./target/keycloak-extension-template-26.0.1-SNAPSHOT.jar:/opt/keycloak/providers/keycloak-extension-template-26.0.1-SNAPSHOT.jar
+      - ./src/test/resources/:/opt/keycloak/data/import

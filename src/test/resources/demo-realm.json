@@ -1,0 +1,23 @@
+{
+  "id" : "demo",
+  "realm" : "demo",
+  "enabled" : true,
+  "users" : [ {
+    "username" : "jdoe",
+    "enabled" : true,
+    "totp" : false,
+    "emailVerified" : true,
+    "firstName" : "John",
+    "lastName" : "Doe",
+    "email" : "jdoe@keycloak.org",
+    "credentials" : [ {
+      "type" : "password",
+      "value": "jdoe"
+    } ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-demo" ],
+    "notBefore" : 0,
+    "groups" : [ ]
+  } ]
+}
